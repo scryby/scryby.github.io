@@ -51,8 +51,8 @@ body {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid gray;
-    background-color: blue;
-    color: white;
+    background-color: rgb(154, 38, 38);
+    color: rgb(0, 0, 0);
     cursor: pointer;
 }
 
