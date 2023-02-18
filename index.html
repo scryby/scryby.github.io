@@ -3,72 +3,12 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"></xsl:stylesheet>
 <html>
     <head>
-        <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-        <script id="MathMLTransform_XML" type="text/xml">
-            <строка>
-            <операнд>σ</операнд>
-            <оператор>=</оператор>
-            <корень>
-            <строка>
-            <дробь>
-            <строка>
-            <число>1</число>
-            </строка>
-            <строка>
-            <операнд>N</операнд>
-            </строка>
-            </дробь>
-            <строка>
-            <низверх>
-            <строка>
-            <оператор>∑</оператор>
-            </строка>
-            <строка>
-            <операнд>i</операнд>
-            <оператор>=</оператор>
-            <число>1</число>
-            </строка>
-            <строка>
-            <операнд>N</операнд>
-            </строка>
-            </низверх>
-            <строка>
-            <верх>
-            <строка>
-            <оператор >(</оператор>
-            <низ>
-            <строка>
-            <операнд>x</операнд>
-            </строка>
-            <строка>
-            <операнд>i</операнд>
-            </строка>
-            </низ>
-            <оператор>−</оператор>
-            <операнд>μ</операнд>
-            <оператор >)</оператор>
-            </строка>
-            <строка>
-            <число>2</число>
-            </строка>
-            </верх>
-            </строка>
-            </строка>
-            </строка>
-            </корень>
-            <оператор>.</оператор>
-           </строка>
-        </script>
-        <script>
-			function insertMathML() {
-				const xml = document.getElementById('MathMLTransform_XML').textContent;
-				document.getElementById('xmlDocument').value = xml;
-				document.getElementById('xsltStylesheetSelect').value = 'mathMLTransform';
-			}
-		</script>
+        <title>My portfolio</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="alternate" href="./xml_style.xml">
     </head>
     <body>
-        <button onclick="insertMathML()" class="insert-button">Insert MathML</button>
+        <button onclick="" class="insert-button">Insert MathML</button>
         <h4 id="author" title="GossJS">Михаил Красноцветов</h4>
     </body>
 </html>
