@@ -1,70 +1,53 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: black;
+    background-image: url(fon.png);
     font-size: 16px;
     padding: 20px;
 }
 
-.style-selector {
-    width: 300px;
-    height: 40px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid gray;
-}
-
-.note {
-    font-size: 14px;
-    color: gray;
-    margin-bottom: 20px;
+.btn {
+    display: flex;
+    justify-content: space-between;
 }
 
 .input {
-    width: 60%;
+    width: 100%;
     height: 200px;
     font-size: 16px;
-    margin-bottom: 20px;
-    padding: 10px;
     border-radius: 5px;
-    border: 1px solid rgb(154, 38, 38);
-    background-color: rgb(126, 125, 123);
-}
-
-.transform-button {
-    width: 150px;
-    height: 40px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid gray;
-    background-color: lightblue;
-    color: white;
-    cursor: pointer;
+    border: 3px solid rgb(0, 0, 0);
+    background-color: #ffcfdd;
+    display: flex;
+    flex-direction: row;
 }
 
 .insert-button {
     width: 150px;
     height: 40px;
     font-size: 16px;
-    margin-bottom: 20px;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid gray;
-    background-color: rgb(154, 38, 38);
+    border: 3px solid black;
+    background-color: #ffcfdd;
     color: rgb(0, 0, 0);
     cursor: pointer;
 }
 
-.result {
-    width: 100%;
-    height: 320px;
+.res-button {
+    width: 150px;
+    height: 40px;
     font-size: 16px;
-    padding: 10px;
     border-radius: 5px;
-    border: 1px solid gray;
-    background-color: lightgray;
-    overflow-y: scroll;
+    border: 1px solid #ffcfdd;
+    background-color: #000;
+    color: #ffcfdd;
+    cursor: pointer;
+}
+
+.name {
+    width: 180px;
+    height: 20px;
+    padding: 5px;
+    background-color:#000;
+    color: #ffcfdd;
 }
