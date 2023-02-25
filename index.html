@@ -77,12 +77,14 @@
 				const xml = document.getElementById('SVG').textContent;
 				document.getElementById('xmlDocument1').value = xml;
 			}
+        function resault(text) {
+            document.getElementById('final').innerHTML = text;
+        }
         </script>
     </head>
     <body>
-        <div class="insert">
             <textarea id="xmlDocument1" rows="10" cols="80" class="input"></textarea><br />
-        </div>
+       
         <div class="btn">
             <div class="but_in">
                 <button onclick="insertMathML()" class="insert-button">Insert MathML</button>
@@ -90,10 +92,12 @@
             </div>
 
             <div class="but_res">
-                <button onclick="" class="res-button">Resault</button>
+                <button onclick="resault(document.getElementById('xmlDocument1').value)" class="res-button">Resault</button>
             </div>
         </div>
         
+        
+        <pre id="final" class="result"></pre>
         
         <h4 id="author" title="GossJS" class="name">Михаил Красноцветов</h4>
     </body>
