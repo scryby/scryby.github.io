@@ -22,7 +22,7 @@ body {
 }
 
 .insert-button {
-    width: 150px;
+    width: 180px;
     height: 40px;
     font-size: 16px;
     padding: 10px;
@@ -60,4 +60,16 @@ body {
     border: 3px solid #000;
     background-color: #ffcfdd;
     overflow-y: scroll;
+}
+
+.selector{
+    width: 300px;
+    height: 45px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #000;
+    color: #ffcfdd;
+    border: 3px solid #ffcfdd;
 }

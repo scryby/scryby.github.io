@@ -3,101 +3,200 @@
     <head>
         <title>My portfolio</title>
         <link rel="stylesheet" href="./style.css">
-        <link rel="alternate" href="./xml_style.xml">
 
-        <script id="MathML" type="text/xml"><строка>
-<операнд>σ</операнд>
-<оператор>=</оператор>
-<корень>
-<строка>
-<дробь>
-<строка>
-<число>1</число>
-</строка>
-<строка>
-<операнд>N</операнд>
-</строка>
-</дробь>
-<строка>
-<низверх>
-<строка>
-<оператор>∑</оператор>
-</строка>
-<строка>
-<операнд>i</операнд>
-<оператор>=</оператор>
-<число>1</число>
-</строка>
-<строка>
-<операнд>N</операнд>
-</строка>
-</низверх>
-<строка>
-<верх>
-<строка>
-<оператор >(</оператор>
-<низ>
-<строка>
-<операнд>x</операнд>
-</строка>
-<строка>
-<операнд>i</операнд>
-</строка>
-</низ>
-<оператор>−</оператор>
-<операнд>μ</операнд>
-<оператор >)</оператор>
-</строка>
-<строка>
-<число>2</число>
-</строка>
-</верх>
-</строка>
-</строка>
-</строка>
-</корень>
-<оператор>.</оператор>
-</строка>
-        </script>
-        
-		<script id="SVG" type="text/xsl"><графика ширина="640" высота="480">
-<эллипс id="графика_1" заливка="rgba(255,0,0,0.5)" ободок="white" ширина-ободка="5" cx="206" cy="139" rx="100" ry="100"/>
-<эллипс id="графика_2" заливка="rgba(0,0,255,0.5)" ободок="white" ширина-ободка="5" cx="108" cy="111" rx="100" ry="100"/>
-<эллипс id="графика_3" заливка="rgba(0,255,0,0.5)" ободок="white" ширина-ободка="5" cx="134" cy="215" rx="100" ry="100"/>
-</графика>
-</root>
+		<script id="mathMLTransform" type="text/xsl">
+			<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+			   <xsl:output method="xml" indent="yes"/>
+
+			            <xsl:template match="/">
+			             <math xmlns="http://www.w3.org/1998/Math/MathML">
+			               <xsl:apply-templates />
+			             </math>
+			           </xsl:template>
+
+                        <xsl:template match="корень">
+                            <msqrt>
+                                <xsl:apply-templates select="*"/>
+                            </msqrt>
+                        </xsl:template>
+
+                        <xsl:template match="строка">
+                            <mrow>
+                                <xsl:apply-templates select="*"/>
+                            </mrow>
+                        </xsl:template>
+
+                        <xsl:template match="операнд">
+                            <mi>
+                                <xsl:value-of select="." />
+                            </mi>
+                        </xsl:template>
+
+                        <xsl:template match="оператор">
+                            <mo>
+                                <xsl:value-of select="." />
+                            </mo>
+                        </xsl:template>
+
+                        <xsl:template match="число">
+                            <mn>
+                                <xsl:value-of select="." />
+                            </mn>
+                        </xsl:template>
+
+                        <xsl:template match="дробь">
+                            <mfrac>
+                                <xsl:apply-templates select="*"/>
+                            </mfrac>
+                        </xsl:template>
+
+                        <xsl:template match="низверх">
+                            <munderover>
+                                <xsl:apply-templates select="*"/>
+                            </munderover>
+                        </xsl:template>
+
+                        <xsl:template match="верх">
+                            <msup>
+                                <xsl:apply-templates select="*"/>
+                            </msup>
+                        </xsl:template>
+
+                        <xsl:template match="низ">
+                            <msub>
+                                <xsl:apply-templates select="*"/>
+                            </msub>
+                        </xsl:template>
+			</xsl:stylesheet>
+		</script>
+		<script id="SVGTransform" type="text/xsl">
+			<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+			  <xsl:output method="xml" indent="yes"/>
+
+			  <xsl:template match="root">
+			    <svg width="{графика/@ширина}" height="{графика/@высота}">
+			      <xsl:apply-templates select="графика/эллипс"/>
+			    </svg>
+			  </xsl:template>
+
+			  <xsl:template match="эллипс">
+			    <ellipse id="{@id}" fill="{@заливка}" stroke="{@ободок}" stroke-width="{@ширина-ободка}" cx="{@cx}" cy="{@cy}" rx="{@rx}" ry="{@ry}"/>
+			  </xsl:template>
+			</xsl:stylesheet>
 		</script>
 
-        <script>
-        function insertMathML() {
-            const xml = document.getElementById('MathML').textContent;
-            document.getElementById('xmlDocument1').value = xml;
-        }
-        function insertSVG() {
-				const xml = document.getElementById('SVG').textContent;
-				document.getElementById('xmlDocument1').value = xml;
+		<script id="MathMLTransform_XML" type="text/xml"><строка>
+ <операнд>σ</операнд>
+ <оператор>=</оператор>
+ <корень>
+ <строка>
+ <дробь>
+ <строка>
+ <число>1</число>
+ </строка>
+ <строка>
+ <операнд>N</операнд>
+ </строка>
+ </дробь>
+ <строка>
+ <низверх>
+ <строка>
+ <оператор>∑</оператор>
+ </строка>
+ <строка>
+ <операнд>i</операнд>
+ <оператор>=</оператор>
+ <число>1</число>
+ </строка>
+ <строка>
+ <операнд>N</операнд>
+ </строка>
+ </низверх>
+ <строка>
+ <верх>
+ <строка>
+ <оператор >(</оператор>
+ <низ>
+ <строка>
+ <операнд>x</операнд>
+ </строка>
+ <строка>
+ <операнд>i</операнд>
+ </строка>
+ </низ>
+ <оператор>−</оператор>
+ <операнд>μ</операнд>
+ <оператор >)</оператор>
+ </строка>
+ <строка>
+ <число>2</число>
+ </строка>
+ </верх>
+ </строка>
+ </строка>
+ </строка>
+ </корень>
+ <оператор>.</оператор>
+</строка></script>
+
+		<script id="SVGTransform_XML" type="text/xml"><root>
+ <графика ширина="640" высота="480">
+ <эллипс id="графика_1" заливка="rgba(255,0,0,0.5)" ободок="white" ширина-ободка="5" cx="206" cy="139" rx="100" ry="100"/>
+ <эллипс id="графика_2" заливка="rgba(0,0,255,0.5)" ободок="white" ширина-ободка="5" cx="108" cy="111" rx="100" ry="100"/>
+ <эллипс id="графика_3" заливка="rgba(0,255,0,0.5)" ободок="white" ширина-ободка="5" cx="134" cy="215" rx="100" ry="100"/>
+ </графика>
+</root></script>
+
+		<script>
+			function insertMathML() {
+				const text = document.getElementById('MathMLTransform_XML').textContent;
+				document.getElementById('xmlDocument').value = text;
+				document.getElementById('xsl_selector').value = 'mathMLTransform';
 			}
-        function resault(text) {
-            document.getElementById('final').innerHTML = text;
-        }
-        </script>
+			function insertSVG() {
+				const text = document.getElementById('SVGTransform_XML').textContent;
+				document.getElementById('xmlDocument').value = text;
+				document.getElementById('xsl_selector').value = 'SVGTransform';
+			}
+
+			function transform(xsltStylesheetId) {
+				const xsltStylesheet = document.getElementById(xsltStylesheetId).textContent;
+				const parser = new DOMParser();
+				const xsltStylesheetNode = parser.parseFromString(xsltStylesheet, 'text/xml');
+
+				const xsltProcessor = new XSLTProcessor();
+				xsltProcessor.importStylesheet(xsltStylesheetNode);
+
+				const xmlString = document.getElementById('xmlDocument').value;
+				const xmlDocument = parser.parseFromString(xmlString, 'text/xml');
+
+				const transformedString = new XMLSerializer().serializeToString(xsltProcessor.transformToDocument(xmlDocument),);
+
+				document.getElementById('transformedResult').innerHTML = transformedString;
+			}
+		</script>
     </head>
     <body>
-            <textarea id="xmlDocument1" rows="10" cols="80" class="input"></textarea><br />
-       
-        <div class="btn">
-            <div class="but_in">
-                <button onclick="insertMathML()" class="insert-button">Insert MathML</button>
-                <button onclick="insertSVG()" class="insert-button">Insert XSLT</button>    
-            </div>
 
-            <div class="but_res">
-                <button onclick="resault(document.getElementById('xmlDocument1').value)" class="res-button">Resault</button>
+		<select id="xsl_selector" class="selector">
+			<option value="mathMLTransform">Math ML</option>
+			<option value="SVGTransform">SVG</option>
+		</select>
+
+		<textarea id="xmlDocument" rows="10" cols="80" class="input"></textarea><br />
+
+        <div class="btn">
+            <div class="btn-insert">
+                <button onclick="insertMathML()" class="insert-button">Insert MathML text</button>
+                <button onclick="insertSVG()" class="insert-button">Insert SVG text</button>
+            </div>
+            <div>
+		    <button onclick="transform(document.getElementById('xsl_selector').value)" class="res-button"> Ready)</button>
             </div>
         </div>
-        
-        
-        <pre id="final" class="result"></pre>
+
+
+		<pre id="transformedResult" class="result"></pre>
         
         <h4 id="author" title="GossJS" class="name">Михаил Красноцветов</h4>
     </body>
